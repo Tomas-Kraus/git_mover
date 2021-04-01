@@ -101,7 +101,7 @@ def create_issues(issues, destination_url, destination, credentials, sameInstall
 
         # if labels were migrated and the issue to be migrated contains labels
         if "labels" in issue:
-            issue_prime["labels"] = map(lambda l : l["name"], issue["labels"])
+            issue_prime["labels"] = list(map(lambda l : l["name"], issue["labels"]))
 
         r = post_req(url, json.dumps(issue_prime), credentials)
         status = check_res(r)
@@ -180,7 +180,7 @@ def main():
 
     issues = download_issues(source_root, source_repo, source_credentials)
     if args.numbers:
-        numbers = map(int, args.numbers.split(','))
+        numbers = list(map(int, args.numbers.split(',')))
         issues = filter(lambda i : int(i["number"]) in numbers, issues)
     if issues:
         sameInstall = False
