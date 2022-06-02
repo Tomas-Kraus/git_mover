@@ -1,6 +1,23 @@
 #!/usr/bin/env python2
 # coding=utf-8
 
+# Commit:
+#    Author: Tomas Kraus <tomas.kraus@oracle.com>
+#    Date:   Thu Jun 2 14:58:12 2022 +0200
+#
+#    Added secondary rate limit handler.
+#    Added transfer log to skip already processes issues (unix FS only).
+#
+#    Signed-off-by: Tomas Kraus <tomas.kraus@oracle.com>
+#
+# Copyright (c) 2022 Oracle and/or its affiliates. All rights reserved.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Distribution License v. 1.0, which is available at
+# http://www.eclipse.org/org/documents/edl-v10.php.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 import requests
 import json
 import argparse
